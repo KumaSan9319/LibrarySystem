@@ -10,6 +10,7 @@ public class VideoGame extends Game {
         this.studio = studio;
     }
 
+    // Method that prints the values of ean, title, studio, year of publication and availability
     @Override
     public String getOverviewItemText() {
         return  "EAN: " + ean + "\n" +

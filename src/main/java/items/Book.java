@@ -2,6 +2,8 @@ package items;
 
 public class Book extends LibraryItem {
 
+    // Book extends LibraryItem directly because it didn't have as much in common with
+    // the other concrete classes
     private String author;
     private String copyEditor;
     private String isbn;
@@ -14,6 +16,7 @@ public class Book extends LibraryItem {
         this.isbn = isbn;
     }
 
+    // Method that prints the values of isbn, title, author, year of publication and availability
     @Override
     public String getOverviewItemText() {
         return  "ISBN: " + isbn + "\n" +

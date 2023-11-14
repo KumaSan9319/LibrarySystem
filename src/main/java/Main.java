@@ -1,38 +1,111 @@
 import items.*;
 
+import java.util.Arrays;
+import java.util.Comparator;
+
 public class Main {
 
     public static void main(String[] args) {
-        Book testBook = new Book("Test Book", "Test Publishing", "22/4/2007",
+
+        // Creating test objects
+        Book testBookA = new Book("Test Book A", "Test Publishing", "22/4/2007",
                 "Adventure", 12, "John Tester",
                 "John Editor", "ISBN 012-3-45-678987-6");
 
-        BoardGame testBoardGame = new BoardGame("Test Board Game", "Test Publishing",
+        Book testBookB = new Book("Test Book B", "Test Publishing", "22/4/2007",
+                "Adventure", 12, "John Tester",
+                "John Editor", "ISBN 012-3-45-678987-6");
+
+        Book testBookC = new Book("Test Book C", "Test Publishing", "22/4/2007",
+                "Adventure", 12, "John Tester",
+                "John Editor", "ISBN 012-3-45-678987-6");
+
+
+
+        BoardGame testBoardGameA = new BoardGame("Test Board Game A", "Test Publishing",
                 "22/4/2007", "Adventure", 12, "2-6",
                 "0123456789876", "John Designer");
 
-        VideoGame testVideoGame = new VideoGame("Test Video Game", "Test Publishing",
+        BoardGame testBoardGameB = new BoardGame("Test Board Game B", "Test Publishing",
+                "22/4/2007", "Adventure", 12, "2-6",
+                "0123456789876", "John Designer");
+
+        BoardGame testBoardGameC = new BoardGame("Test Board Game C", "Test Publishing",
+                "22/4/2007", "Adventure", 12, "2-6",
+                "0123456789876", "John Designer");
+
+
+
+        VideoGame testVideoGameA = new VideoGame("Test Video GameA", "Test Publishing",
                 "22/4/2007", "Adventure", 12, "1-4",
                 "0123456789876", "Test Studio");
 
-        MonthlyMagazine testMonthlyMagazine = new MonthlyMagazine("Test Monthly", "Test Publishing",
+        VideoGame testVideoGameB = new VideoGame("Test Video Game B", "Test Publishing",
+                "22/4/2007", "Adventure", 12, "1-4",
+                "0123456789876", "Test Studio");
+
+        VideoGame testVideoGameC = new VideoGame("Test Video Game C", "Test Publishing",
+                "22/4/2007", "Adventure", 12, "1-4",
+                "0123456789876", "Test Studio");
+
+
+
+        MonthlyMagazine testMonthlyMagazineA = new MonthlyMagazine("Test Monthly A", "Test Publishing",
                 "22/4/2007", "Science", 12, "John Editor",
                 "ISSN 0123-456X", 4, "Test Appearance");
 
-        WeeklyMagazine testWeeklyMagazine = new WeeklyMagazine("Test Weekly", "Test Publishing",
+        MonthlyMagazine testMonthlyMagazineB = new MonthlyMagazine("Test Monthly B", "Test Publishing",
+                "22/4/2007", "Science", 12, "John Editor",
+                "ISSN 0123-456X", 4, "Test Appearance");
+
+        MonthlyMagazine testMonthlyMagazineC = new MonthlyMagazine("Test Monthly C", "Test Publishing",
+                "22/4/2007", "Science", 12, "John Editor",
+                "ISSN 0123-456X", 4, "Test Appearance");
+
+
+
+        WeeklyMagazine testWeeklyMagazineA = new WeeklyMagazine("Test Weekly A", "Test Publishing",
                 "22/4/2007", "Science", 12, "John Editor",
                 "ISSN 0123-456X", 13);
 
-        DailyMagazine testDailyMagazine = new DailyMagazine("Test Daily", "Test Publishing",
+        WeeklyMagazine testWeeklyMagazineB = new WeeklyMagazine("Test Weekly B", "Test Publishing",
+                "22/4/2007", "Science", 12, "John Editor",
+                "ISSN 0123-456X", 13);
+
+        WeeklyMagazine testWeeklyMagazineC = new WeeklyMagazine("Test Weekly C", "Test Publishing",
+                "22/4/2007", "Science", 12, "John Editor",
+                "ISSN 0123-456X", 13);
+
+
+
+        DailyMagazine testDailyMagazineA = new DailyMagazine("Test Daily A", "Test Publishing",
                 "22/4/2007", "Science", 12, "John Editor",
                 "ISSN 0123-456X", 112);
 
-        System.out.println(testBook.getOverviewItemText());
-        System.out.println(testBoardGame.getOverviewItemText());
-        System.out.println(testVideoGame.getOverviewItemText());
-        System.out.println(testMonthlyMagazine.getOverviewItemText());
-        System.out.println(testWeeklyMagazine.getOverviewItemText());
-        System.out.println(testDailyMagazine.getOverviewItemText());
+        DailyMagazine testDailyMagazineB = new DailyMagazine("Test Daily B", "Test Publishing",
+                "22/4/2007", "Science", 12, "John Editor",
+                "ISSN 0123-456X", 112);
+
+        DailyMagazine testDailyMagazineC = new DailyMagazine("Test Daily C", "Test Publishing",
+                "22/4/2007", "Science", 12, "John Editor",
+                "ISSN 0123-456X", 112);
+
+
+
+        // Adding all created library items to an array
+        LibraryItem[] items = {testBookA, testBookB, testBookC, testBoardGameA, testBoardGameB, testBoardGameC,
+                                testVideoGameA, testVideoGameB, testVideoGameC, testMonthlyMagazineA,
+                                testMonthlyMagazineB, testMonthlyMagazineC, testWeeklyMagazineA, testWeeklyMagazineB,
+                                testWeeklyMagazineC, testDailyMagazineA, testDailyMagazineB, testDailyMagazineC};
+
+        // Sorting the items in the array alphabetically by title
+        Arrays.sort(items, Comparator.comparing(LibraryItem::getTitle));
+
+        // Printing items in the array
+        for (LibraryItem item : items) {
+            System.out.println(item.getOverviewItemText());
+        }
+
     }
 
 }

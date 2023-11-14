@@ -13,6 +13,7 @@ public class MonthlyMagazine extends Magazine {
         this.appearance = appearance;
     }
 
+    // Method that prints the values of issn, title, month number and availability
     @Override
     public String getOverviewItemText() {
         return  "ISSN: " + issn + "\n" +

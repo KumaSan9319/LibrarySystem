@@ -2,6 +2,7 @@ package items;
 
 public abstract class Magazine extends LibraryItem {
 
+    // Extended blueprint for more specialized, specifically Magazine, classes
     protected String copyEditor;
     protected String issn;
 
