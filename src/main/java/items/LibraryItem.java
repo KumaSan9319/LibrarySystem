@@ -2,6 +2,7 @@ package items;
 
 public abstract class LibraryItem {
 
+    // Main blueprint class with instance fields and methods that all other classes will share
     protected String title;
     protected String publisher;
     protected String publicationDate;
@@ -18,6 +19,11 @@ public abstract class LibraryItem {
         this.ageRating = ageRating;
     }
 
+    public String getTitle() {
+        return title;
+    }
+
+    // Checking availability for borrowing and returning items to the library
     public void borrowItem() {
         if (this.isAvailable) {
             this.isAvailable = false;
@@ -32,11 +38,14 @@ public abstract class LibraryItem {
         }
     }
 
+    // Method to extract year of publication from full publication date
+    // so those don't need to be declared as separate fields
     public int getYearOfPublication() {
         String yearOfPublication = this.publicationDate.substring(this.publicationDate.length() - 4);
         return Integer.parseInt(yearOfPublication);
     }
 
+    // Abstract for an effective toString() method for all child classes
     public abstract String getOverviewItemText();
 
 }

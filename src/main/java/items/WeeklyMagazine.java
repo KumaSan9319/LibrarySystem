@@ -10,6 +10,7 @@ public class WeeklyMagazine extends Magazine {
         this.weekNumber = weekNumber;
     }
 
+    // Method that prints the values of issn, title, week number and availability
     @Override
     public String getOverviewItemText() {
         return  "ISSN: " + issn + "\n" +

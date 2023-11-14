@@ -10,6 +10,7 @@ public class DailyMagazine extends Magazine {
         this.issueNumber = issueNumber;
     }
 
+    // Method that prints the values of issn, title, issue number and availability
     @Override
     public String getOverviewItemText() {
         return  "ISSN: " + issn + "\n" +

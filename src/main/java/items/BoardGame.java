@@ -10,6 +10,7 @@ public class BoardGame extends Game {
         this.designer = designer;
     }
 
+    // Method that prints the values of ean, title, designer, year of publication and availability
     @Override
     public String getOverviewItemText() {
         return  "EAN: " + ean + "\n" +
