@@ -23,6 +23,44 @@ public abstract class LibraryItem {
         return title;
     }
 
+    public String getPublisher() {
+        return publisher;
+    }
+
+    public String getPublicationDate() {
+        return publicationDate;
+    }
+
+    public String getGenre() {
+        return genre;
+    }
+
+    public int getAgeRating() {
+        return ageRating;
+    }
+
+    public boolean isAvailable() {
+        return isAvailable;
+    }
+
+    // Method to extract year of publication from full publication date
+    // so those don't need to be declared as separate fields
+    public int getYearOfPublication() {
+        String yearOfPublication = this.publicationDate.substring(this.publicationDate.length() - 4);
+        return Integer.parseInt(yearOfPublication);
+    }
+
+    // Method to check what type of class the current object is. Mostly used for sorting purposes
+    public String getType() {
+        return this.getClass().getSimpleName();
+    }
+
+    // Abstract for an effective toString() method for all child classes
+    public abstract String getOverviewItemText();
+
+    // Abstract method for checking if search input matches targeted instance fields
+    public abstract boolean matchesSearch(String search);
+
     // Checking availability for borrowing and returning items to the library
     public void borrowItem() {
         if (this.isAvailable) {
@@ -37,15 +75,5 @@ public abstract class LibraryItem {
             this.isAvailable = true;
         }
     }
-
-    // Method to extract year of publication from full publication date
-    // so those don't need to be declared as separate fields
-    public int getYearOfPublication() {
-        String yearOfPublication = this.publicationDate.substring(this.publicationDate.length() - 4);
-        return Integer.parseInt(yearOfPublication);
-    }
-
-    // Abstract for an effective toString() method for all child classes
-    public abstract String getOverviewItemText();
 
 }

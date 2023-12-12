@@ -1,5 +1,7 @@
 package items;
 
+import java.util.Locale;
+
 public class DailyMagazine extends Magazine {
 
     private int issueNumber;
@@ -18,4 +20,14 @@ public class DailyMagazine extends Magazine {
                 "Issue Number: " + issueNumber + "\n" +
                 "Available: " + isAvailable + "\n";
     }
+
+    // checking if search input contains any information present in this item
+    @Override
+    public boolean matchesSearch(String search) {
+        String searchTerm = search.toLowerCase();
+        return getTitle().toLowerCase(Locale.ROOT).contains(searchTerm) ||
+                getGenre().toLowerCase(Locale.ROOT).contains(searchTerm) ||
+                this.issn.toLowerCase(Locale.ROOT).contains(searchTerm);
+    }
+
 }

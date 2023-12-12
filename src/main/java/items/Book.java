@@ -1,5 +1,7 @@
 package items;
 
+import java.util.Locale;
+
 public class Book extends LibraryItem {
 
     // Book extends LibraryItem directly because it didn't have as much in common with
@@ -24,6 +26,16 @@ public class Book extends LibraryItem {
                 "Author: " + author + "\n" +
                 "Year of Publication: " + getYearOfPublication() + "\n" +
                 "Available: " + isAvailable + "\n";
+    }
+
+    // checking if search input contains any information present in this item
+    @Override
+    public boolean matchesSearch(String search) {
+        String searchTerm = search.toLowerCase();
+        return getTitle().toLowerCase(Locale.ROOT).contains(searchTerm) ||
+               getGenre().toLowerCase(Locale.ROOT).contains(searchTerm) ||
+               this.author.toLowerCase(Locale.ROOT).contains(searchTerm) ||
+               this.isbn.toLowerCase(Locale.ROOT).contains(searchTerm);
     }
 
 }
