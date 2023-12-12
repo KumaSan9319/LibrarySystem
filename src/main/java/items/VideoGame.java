@@ -1,5 +1,7 @@
 package items;
 
+import java.util.Locale;
+
 public class VideoGame extends Game {
 
     private String studio;
@@ -18,6 +20,16 @@ public class VideoGame extends Game {
                 "Studio: " + studio + "\n" +
                 "Year of Publication: " + getYearOfPublication() + "\n" +
                 "Available: " + isAvailable + "\n";
+    }
+
+    // checking if search input contains any information present in this item
+    @Override
+    public boolean matchesSearch(String search) {
+        String searchTerm = search.toLowerCase();
+        return getTitle().toLowerCase(Locale.ROOT).contains(searchTerm) ||
+                getGenre().toLowerCase(Locale.ROOT).contains(searchTerm) ||
+                this.studio.toLowerCase(Locale.ROOT).contains(searchTerm) ||
+                this.ean.toLowerCase(Locale.ROOT).contains(searchTerm);
     }
 
 }

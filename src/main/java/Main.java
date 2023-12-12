@@ -1,8 +1,5 @@
 import items.*;
 
-import java.util.Arrays;
-import java.util.Comparator;
-
 public class Main {
 
     public static void main(String[] args) {
@@ -36,7 +33,7 @@ public class Main {
 
 
 
-        VideoGame testVideoGameA = new VideoGame("Test Video GameA", "Test Publishing",
+        VideoGame testVideoGameA = new VideoGame("Test Video Game A", "Test Publishing",
                 "22/4/2007", "Adventure", 12, "1-4",
                 "0123456789876", "Test Studio");
 
@@ -97,14 +94,6 @@ public class Main {
                                 testVideoGameA, testVideoGameB, testVideoGameC, testMonthlyMagazineA,
                                 testMonthlyMagazineB, testMonthlyMagazineC, testWeeklyMagazineA, testWeeklyMagazineB,
                                 testWeeklyMagazineC, testDailyMagazineA, testDailyMagazineB, testDailyMagazineC};
-
-        // Sorting the items in the array alphabetically by title
-        Arrays.sort(items, Comparator.comparing(LibraryItem::getTitle));
-
-        // Printing items in the array
-        for (LibraryItem item : items) {
-            System.out.println(item.getOverviewItemText());
-        }
 
     }
 
