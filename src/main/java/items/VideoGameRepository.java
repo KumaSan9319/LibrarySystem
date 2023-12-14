@@ -4,7 +4,7 @@ import data.ItemDAO;
 
 import java.util.Arrays;
 
-public class VideoGameRepository extends ItemRepository {
+public class VideoGameRepository extends Repository {
 
     public VideoGameRepository(ItemDAO itemDAO) {
         super(itemDAO);

@@ -4,7 +4,7 @@ import data.ItemDAO;
 
 import java.util.Arrays;
 
-public class BookRepository extends ItemRepository {
+public class BookRepository extends Repository {
 
     public BookRepository(ItemDAO itemDAO) {
         super(itemDAO);

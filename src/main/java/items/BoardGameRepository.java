@@ -4,7 +4,7 @@ import data.ItemDAO;
 
 import java.util.Arrays;
 
-public class BoardGameRepository extends ItemRepository {
+public class BoardGameRepository extends Repository {
 
     public BoardGameRepository(ItemDAO itemDAO) {
         super(itemDAO);

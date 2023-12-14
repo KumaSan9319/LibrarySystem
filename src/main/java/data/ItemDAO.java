@@ -2,8 +2,8 @@ package data;
 
 import items.LibraryItem;
 
-public abstract class ItemDAO {
+public interface ItemDAO {
 
-    public abstract LibraryItem[] getAllItems();
+    LibraryItem[] getAllItems();
 
 }

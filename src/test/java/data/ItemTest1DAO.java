@@ -2,7 +2,7 @@ package data;
 
 import items.*;
 
-public class ItemTest1DAO extends ItemDAO {
+public class ItemTest1DAO implements ItemDAO {
 
         // Array with test items
         private LibraryItem[] libraryItems = {

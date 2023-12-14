@@ -1,6 +1,6 @@
 package items;
 
-public abstract class LibraryItem {
+public abstract class LibraryItem implements Searchable {
 
     // Main blueprint class with instance fields and methods that all other classes will share
     protected String title;
@@ -57,9 +57,6 @@ public abstract class LibraryItem {
 
     // Abstract for an effective toString() method for all child classes
     public abstract String getOverviewItemText();
-
-    // Abstract method for checking if search input matches targeted instance fields
-    public abstract boolean matchesSearch(String search);
 
     // Checking availability for borrowing and returning items to the library
     public void borrowItem() {

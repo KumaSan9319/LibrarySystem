@@ -2,7 +2,7 @@ package items;
 
 import java.util.Locale;
 
-public class Book extends LibraryItem {
+public class Book extends LibraryItem implements java.util.Comparator, Searchable {
 
     // Book extends LibraryItem directly because it didn't have as much in common with
     // the other concrete classes
@@ -38,4 +38,8 @@ public class Book extends LibraryItem {
                this.isbn.toLowerCase(Locale.ROOT).contains(searchTerm);
     }
 
+    @Override
+    public int compare(Object o1, Object o2) {
+        return 0;
+    }
 }

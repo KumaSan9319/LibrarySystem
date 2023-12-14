@@ -1,6 +1,6 @@
 package items;
 
-public abstract class Magazine extends LibraryItem {
+public abstract class Magazine extends LibraryItem implements java.util.Comparator, Searchable {
 
     // Extended blueprint for more specialized, specifically Magazine, classes
     protected String copyEditor;
@@ -11,6 +11,11 @@ public abstract class Magazine extends LibraryItem {
         super(title, publisher, publicationDate, genre, ageRating);
         this.copyEditor = copyEditor;
         this.issn = issn;
+    }
+
+    @Override
+    public int compare(Object o1, Object o2) {
+        return 0;
     }
 
 }

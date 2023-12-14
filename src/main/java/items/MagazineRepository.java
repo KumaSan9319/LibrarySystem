@@ -4,7 +4,7 @@ import data.ItemDAO;
 
 import java.util.Arrays;
 
-public class MagazineRepository extends ItemRepository {
+public class MagazineRepository extends Repository {
 
     public MagazineRepository(ItemDAO itemDAO) {
         super(itemDAO);

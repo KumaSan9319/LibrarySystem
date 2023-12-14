@@ -2,7 +2,7 @@ package items;
 
 import java.util.Locale;
 
-public class VideoGame extends Game {
+public class VideoGame extends Game implements java.util.Comparator, Searchable {
 
     private String studio;
 
@@ -32,4 +32,8 @@ public class VideoGame extends Game {
                 this.ean.toLowerCase(Locale.ROOT).contains(searchTerm);
     }
 
+    @Override
+    public int compare(Object o1, Object o2) {
+        return 0;
+    }
 }
